@@ -1,7 +1,7 @@
 # ros_indigo_urdf_gazebo_ogre
 Test package containing all attemps at using custom OGRE materials in URDF in ROS Indigo that displays in Gazebo
 
-I added the following to `/usr/share/gazebo-2.2/media/materials/scripts/gazebo.material`:
+I added the following to `/usr/share/gazebo-2.2/media/materials/scripts/gazebo.material`, just to test:
 
 ```
 material ros_indigo_urdf_gazebo_ogre/InternationalOrange
