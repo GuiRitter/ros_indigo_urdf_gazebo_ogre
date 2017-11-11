@@ -1,0 +1,64 @@
+<launch>
+
+	<env name="GAZEBO_RESOURCE_PATH" value="$GAZEBO_RESOURCE_PATH:$(find ros_indigo_urdf_gazebo_ogre):$(find ros_indigo_urdf_gazebo_ogre)/Media:$(find ros_indigo_urdf_gazebo_ogre)/Media/materials:$(find ros_indigo_urdf_gazebo_ogre)/Media/materials/scripts:$(find ros_indigo_urdf_gazebo_ogre)/media:$(find ros_indigo_urdf_gazebo_ogre)/media/materials:$(find ros_indigo_urdf_gazebo_ogre)/media/materials/scripts" />
+	<include file="$(find ros_indigo_urdf_gazebo_ogre)/launch/parameter.launch"/>
+	<arg
+		name="paused"
+		default="true"
+	/>
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+
+		<arg
+			name="paused"
+			value="$(arg paused)"
+		/>
+
+	</include>
+	<node
+		name="ros_indigo_urdf_gazebo_ogre_spawner"
+		pkg="gazebo_ros"
+		type="spawn_model"
+		args="-urdf -model robot -param robot_description -model ros_indigo_urdf_gazebo_ogre"
+		ns="ros_indigo_urdf_gazebo_ogre"
+	/>
+	<node
+		name="joint_state_publisher"
+		pkg="joint_state_publisher"
+		type="joint_state_publisher"
+		ns="ros_indigo_urdf_gazebo_ogre"
+	>
+
+		<param
+			name="use_gui"
+			type="Boolean"
+			value="false"
+		/>
+		<remap
+			from="/joint_states"
+			to="/ros_indigo_urdf_gazebo_ogre/joint_states"
+		/>
+
+	</node>
+	<node
+		name="robot_state_publisher"
+		pkg="robot_state_publisher"
+		type="robot_state_publisher"
+		respawn="false"
+		output="screen"
+		ns="ros_indigo_urdf_gazebo_ogre"
+	>
+
+		<param
+			name="publish_frequency"
+			type="double"
+			value="30.0"
+		/>
+		<remap
+			from="/joint_states"
+			to="/ros_indigo_urdf_gazebo_ogre/joint_states"
+		/>
+
+	</node>
+
+</launch>
+

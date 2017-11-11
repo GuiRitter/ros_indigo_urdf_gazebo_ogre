@@ -1,0 +1,12 @@
+material ros_indigo_urdf_gazebo_ogre/InternationalOrange
+{
+  technique
+  {
+    pass ambient
+    {
+      ambient 1 0.3098039215686274 0
+      diffuse 1 0.3098039215686274 0
+      specular 0.1 0.1 0.1 1 1
+    }
+  }
+}

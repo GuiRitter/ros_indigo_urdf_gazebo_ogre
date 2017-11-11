@@ -1,0 +1,8 @@
+<launch>
+
+	<param
+		name="ros_indigo_urdf_gazebo_ogre/robot_description"
+		command="$(find xacro)/xacro --inorder '$(find ros_indigo_urdf_gazebo_ogre)/xacro/description.urdf.xacro'"
+	/>
+
+</launch>

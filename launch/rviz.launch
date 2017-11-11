@@ -1,0 +1,45 @@
+<launch>
+
+	<include file="$(find ros_indigo_urdf_gazebo_ogre)/launch/parameter.launch"/>
+	<node
+		name="joint_state_publisher"
+		pkg="joint_state_publisher"
+		type="joint_state_publisher"
+		ns="ros_indigo_urdf_gazebo_ogre"
+	>
+
+		<param
+			name="use_gui"
+			type="Boolean"
+			value="false"
+		/>
+		<remap
+			from="/joint_states"
+			to="/ros_indigo_urdf_gazebo_ogre/joint_states"
+		/>
+
+	</node>
+	<node
+		name="robot_state_publisher"
+		pkg="robot_state_publisher"
+		type="state_publisher"
+		ns="ros_indigo_urdf_gazebo_ogre"
+	>
+
+		<remap
+			from="/joint_states"
+			to="/ros_indigo_urdf_gazebo_ogre/joint_states"
+		/>
+
+	</node>
+	<node
+		name="rviz"
+		pkg="rviz"
+		type="rviz"
+		args="-d $(find ros_indigo_urdf_gazebo_ogre)/description.rviz -f link_origin"
+		required="true"
+		ns="ros_indigo_urdf_gazebo_ogre"
+	/>
+	<!-- -f origin_link -->
+
+</launch>

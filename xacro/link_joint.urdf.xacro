@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:macro
+		name="link_joint_macro"
+		params="name parent"
+	>
+
+	    <link name="link_${name}">
+
+                    <inertial>
+
+                            <mass value="0.03361362597"/>
+                            <origin xyz="0 0 0"/>
+                            <inertia
+                                    ixx="0.00000282134173856"
+                                    ixy="0.00000000000000490"
+                                    ixz="-0.00000000000003036"
+                                    iyy="0.00000282134165283"
+                                    iyz="-0.00000000000001341"
+                                    izz="0.00000282134168996"
+                            />
+
+                    </inertial>
+                    <visual>
+
+                            <geometry>
+
+                                    <mesh filename="package://ros_indigo_urdf_gazebo_ogre/mesh/dodecahedron.STL"/>
+
+                            </geometry>
+
+                    </visual>
+                    <collision>
+
+                            <geometry>
+
+                                    <mesh filename="package://ros_indigo_urdf_gazebo_ogre/mesh/dodecahedron.STL"/>
+
+                            </geometry>
+
+                    </collision>
+
+            </link>
+            <joint
+                name="joint_${name}"
+                type="fixed"
+            >
+
+                    <origin xyz="0 0 0.03020225572"/>
+                    <parent link="link_${parent}"/>
+                    <child link="link_${name}"/>
+
+            </joint>
+
+	</xacro:macro>
+
+</robot>
