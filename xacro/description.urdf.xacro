@@ -5,6 +5,7 @@
 >
 
 	<xacro:include filename="$(find ros_indigo_urdf_gazebo_ogre)/xacro/link_joint.urdf.xacro"/>
+	<xacro:include filename="$(find ros_indigo_urdf_gazebo_ogre)/xacro/link_joint_dae.urdf.xacro"/>
 	<link name="link_origin"/>
 	<link name="link_0">
 
@@ -42,8 +43,8 @@
 		</collision>
 	</link>
 	<joint
-	    name="joint_0"
-	    type="fixed"
+		name="joint_0"
+		type="fixed"
 	>
 
 		<origin xyz="0 0 0.00915298218"/>
@@ -51,17 +52,31 @@
 		<child link="link_0"/>
 
 	</joint>
-	<xacro:link_joint_macro
-		name="1"
-		parent="0"
+	<xacro:link_joint_macro name="1"/>
+	<xacro:link_joint_macro name="2"/>
+	<xacro:link_joint_macro name="3"/>
+	<xacro:link_joint_macro name="4"/>
+	<xacro:link_joint_macro name="5"/>
+	<xacro:link_joint_macro name="6"/>
+	<xacro:link_joint_macro name="7"/>
+	<xacro:link_joint_macro name="8"/>
+	<xacro:link_joint_macro name="9"/>
+	<xacro:link_joint_macro name="10"/>
+	<xacro:link_joint_macro name="11"/>
+	<xacro:link_joint_macro name="12"/>
+	<xacro:link_joint_macro name="13"/>
+	<xacro:link_joint_macro name="14"/>
+	<xacro:link_joint_macro name="15"/>
+	<xacro:link_joint_macro name="16"/>
+	<xacro:link_joint_macro name="17"/>
+	<xacro:link_joint_macro name="18"/>
+	<xacro:link_joint_dae_macro
+		name="19"
+		mesh="dodecahedron_ambient_0.dae"
 	/>
-	<xacro:link_joint_macro
-		name="2"
-		parent="1"
-	/>
-	<xacro:link_joint_macro
-		name="3"
-		parent="2"
+	<xacro:link_joint_dae_macro
+		name="20"
+		mesh="dodecahedron_ambient_1.dae"
 	/>
 	<gazebo reference="link_1">
 
@@ -76,6 +91,95 @@
 	<gazebo reference="link_3">
 
 		<material>ros_indigo_urdf_gazebo_ogre/Azure</material>
+
+	</gazebo>
+	<gazebo reference="link_4"><material><script>
+
+		<uri>file://media/materials/scripts/gazebo.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_5"><material><script>
+
+		<uri>file://media/materials/scripts/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_6"><material><script>
+
+		<uri>file://Media/materials/scripts/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_7"><material><script>
+
+		<uri>file://materials/scripts/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_8"><material><script>
+
+		<uri>file://scripts/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_9"><material><script>
+
+		<uri>file://ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_10"><material><script>
+
+		<uri>file://home/guir/catkin_ws/src/ros_indigo_urdf_gazebo_ogre/media/materials/scripts/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_11"><material><script>
+
+		<uri>file://home/guir/catkin_ws/src/ros_indigo_urdf_gazebo_ogre/Media/materials/scripts/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_12"><material><script>
+
+		<uri>file://home/guir/catkin_ws/src/ros_indigo_urdf_gazebo_ogre/media/materials/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_13"><material><script>
+
+		<uri>file://home/guir/catkin_ws/src/ros_indigo_urdf_gazebo_ogre/Media/materials/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_14"><material><script>
+
+		<uri>file://home/guir/catkin_ws/src/ros_indigo_urdf_gazebo_ogre/media/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_15"><material><script>
+
+		<uri>file://home/guir/catkin_ws/src/ros_indigo_urdf_gazebo_ogre/Media/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_16"><material><script>
+
+		<uri>file://home/guir/catkin_ws/src/ros_indigo_urdf_gazebo_ogre/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_17"><material><script>
+
+		<uri>file:///home/guir/catkin_ws/src/ros_indigo_urdf_gazebo_ogre/ros_indigo_urdf_gazebo_ogre.material</uri>
+		<name>ros_indigo_urdf_gazebo_ogre/Azure</name>
+
+	</script></material></gazebo>
+	<gazebo reference="link_18">
+
+		<material>ros_indigo_urdf_gazebo_ogre.material</material>
 
 	</gazebo>
 

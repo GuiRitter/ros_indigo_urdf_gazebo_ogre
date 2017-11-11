@@ -2,8 +2,8 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 	<xacro:macro
-		name="link_joint_macro"
-		params="name"
+		name="link_joint_dae_macro"
+		params="name mesh"
 	>
 
 	    <link name="link_${name}">
@@ -26,7 +26,7 @@
 
                             <geometry>
 
-                                    <mesh filename="package://ros_indigo_urdf_gazebo_ogre/mesh/dodecahedron.STL"/>
+                                    <mesh filename="package://ros_indigo_urdf_gazebo_ogre/mesh/${mesh}"/>
 
                             </geometry>
 
@@ -35,7 +35,7 @@
 
                             <geometry>
 
-                                    <mesh filename="package://ros_indigo_urdf_gazebo_ogre/mesh/dodecahedron.STL"/>
+                                    <mesh filename="package://ros_indigo_urdf_gazebo_ogre/mesh/${mesh}"/>
 
                             </geometry>
 

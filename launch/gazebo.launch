@@ -1,6 +1,9 @@
 <launch>
 
-	<env name="GAZEBO_RESOURCE_PATH" value="$GAZEBO_RESOURCE_PATH:$(find ros_indigo_urdf_gazebo_ogre):$(find ros_indigo_urdf_gazebo_ogre)/Media:$(find ros_indigo_urdf_gazebo_ogre)/Media/materials:$(find ros_indigo_urdf_gazebo_ogre)/Media/materials/scripts:$(find ros_indigo_urdf_gazebo_ogre)/media:$(find ros_indigo_urdf_gazebo_ogre)/media/materials:$(find ros_indigo_urdf_gazebo_ogre)/media/materials/scripts" />
+	<env
+		name="GAZEBO_RESOURCE_PATH"
+		value="$GAZEBO_RESOURCE_PATH:$(find ros_indigo_urdf_gazebo_ogre):$(find ros_indigo_urdf_gazebo_ogre)/Media:$(find ros_indigo_urdf_gazebo_ogre)/Media/materials:$(find ros_indigo_urdf_gazebo_ogre)/Media/materials/scripts:$(find ros_indigo_urdf_gazebo_ogre)/media:$(find ros_indigo_urdf_gazebo_ogre)/media/materials:$(find ros_indigo_urdf_gazebo_ogre)/media/materials/scripts"
+	/>
 	<include file="$(find ros_indigo_urdf_gazebo_ogre)/launch/parameter.launch"/>
 	<arg
 		name="paused"
