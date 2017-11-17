@@ -47,7 +47,10 @@
 		type="fixed"
 	>
 
-		<origin xyz="0 0 0.00915298218"/>
+		<origin
+			xyz="0 0 0.02"
+			rpy="0 1.570796 0"
+		/>
 		<parent link="link_origin"/>
 		<child link="link_0"/>
 
