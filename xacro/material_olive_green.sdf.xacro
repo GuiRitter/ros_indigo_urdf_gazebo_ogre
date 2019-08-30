@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="material_olive_green">
+  <visual>
+    <material>
+      <ambient>0.3137254 0.3254902 0.2352941 1</ambient>
+      <diffuse>0.3137254 0.3254902 0.2352941 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+</robot>

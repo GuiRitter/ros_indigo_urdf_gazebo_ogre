@@ -6,6 +6,7 @@
 
 	<xacro:include filename="$(find ros_indigo_urdf_gazebo_ogre)/xacro/link_joint.urdf.xacro"/>
 	<xacro:include filename="$(find ros_indigo_urdf_gazebo_ogre)/xacro/link_joint_dae.urdf.xacro"/>
+	<xacro:include filename="$(find ros_indigo_urdf_gazebo_ogre)/xacro/material_olive_green.sdf.xacro"/>
 	<link name="link_origin"/>
 	<link name="link_0">
 
@@ -81,6 +82,7 @@
 		name="20"
 		mesh="dodecahedron_ambient_1.dae"
 	/>
+	<xacro:link_joint_macro name="21"/>
 	<gazebo reference="link_1">
 
 		<material>Gazebo/Yellow</material>
@@ -183,6 +185,12 @@
 	<gazebo reference="link_18">
 
 		<material>ros_indigo_urdf_gazebo_ogre.material</material>
+
+	</gazebo>
+	<gazebo reference="link_21">
+
+		<xacro:material_olive_green />
+		<turnGravityOff>true</turnGravityOff>
 
 	</gazebo>
 
